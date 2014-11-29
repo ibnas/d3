@@ -2,7 +2,7 @@ d3.selectionPrototype.monitor = function(){
 
 	if(this.monitored)
 		return;
-	
+		this.changeListeners = [];
 	this.parentSelection.monitor();
 			this.parentSelection.addChangeListner(this);
 	for(j = -1; ++j < this.length; ){
@@ -89,4 +89,3 @@ d3.selectionPrototype.removeGroup = function(i){
 	this.splice(i, 1);
 };
 
-d3.selectionPrototype.changeListeners = [];
