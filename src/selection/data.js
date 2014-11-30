@@ -1,12 +1,8 @@
- import "../arrays/map";
+import "../arrays/map";
 import "../arrays/set";
 import "selection";
 
 d3_selectionPrototype.data = function(value, key) {
-  this.dataFunction = function(){
-    this.data(value, key);
-  }
-
   var i = -1,
       n = this.length,
       group,
