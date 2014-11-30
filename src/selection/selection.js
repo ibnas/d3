@@ -5,28 +5,11 @@ import "../core/vendor";
 
 function d3_selection(groups) {
   d3_subclass(groups, d3_selectionPrototype);
+  groups.parentSelection = this;
   return groups;
 }
 
-var d3_select = function(s, n) { 
-var nodes = n.querySelector(s);
-  // var obsrv = new MutattionObserver (function(records){
-  //   var t = false;
-  //   for(i = -1; i++ < records.length){
-  //     var added = Array.concat(records[i].addedNodes,records[i].removedNodes);
-  //     for(j in added){
-  //         if(added[j].matches(s)){
-  //             nodes.splice(0, nodes.length);
-  //             for(i in nds = n.querySelector(s)){
-  //                 nodes.push(nds[i]);
-  //             }
-  //             break;
-  //         }
-  //     }
-  //   }
-
-  });
-    return nodes;
+var d3_select = function(s, n) {  return n.querySelector(s);
 },
     d3_selectAll = function(s, n) { return n.querySelectorAll(s); },
     d3_selectMatcher = d3_documentElement.matches || d3_documentElement[d3_vendorSymbol(d3_documentElement, "matchesSelector")],
